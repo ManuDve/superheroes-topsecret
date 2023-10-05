@@ -1,5 +1,6 @@
 package com.eureka.superheroestopsecret.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,4 +22,10 @@ public class Organizacion implements Serializable {
     private Boolean publico;
     @Column(name="primera_aparicion")
     private LocalDate fecha;
+    @OneToMany(
+            mappedBy = "organizacion",
+            cascade = CascadeType.ALL
+    )
+    @JsonManagedReference
+    private List<Superheroe> superheroes;
 }

@@ -1,6 +1,7 @@
 package com.eureka.superheroestopsecret.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,7 +20,7 @@ public class Superheroe implements Serializable {
     private Boolean vigencia;
     @ManyToOne
     @JoinColumn(name = "organizacion_id", nullable = false)
-    @JsonBackReference
+    @JsonIgnoreProperties("superheroes")
     private Organizacion organizacion;
 
 }

@@ -21,8 +21,8 @@ public class SuperheroeController {
         return superheroeService.createSuperheroe(superheroe);
     }
     @GetMapping
-    public List<Superheroe> getAllOrganizations(){
-        return superheroeService.getAllOrganitazions();
+    public List<Superheroe> getAllSuperheroes(){
+        return superheroeService.getAllSuperheroes();
     }
     @GetMapping("{id}")
     public Superheroe getOrganizationById(@PathVariable("id") Long id){

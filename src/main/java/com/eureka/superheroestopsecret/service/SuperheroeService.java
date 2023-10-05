@@ -18,7 +18,7 @@ public class SuperheroeService {
         Optional<Superheroe> superheroeOptional = superheroeRepository.findById(id);
         return superheroeOptional.get();
     }
-    public List<Superheroe> getAllOrganitazions(){
+    public List<Superheroe> getAllSuperheroes(){
         return superheroeRepository.findAll();
     }
 

@@ -1,5 +1,6 @@
 package com.eureka.superheroestopsecret.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
@@ -24,8 +25,9 @@ public class Organizacion implements Serializable {
     private LocalDate fecha;
     @OneToMany(
             mappedBy = "organizacion",
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
-    @JsonManagedReference
+    @JsonIgnoreProperties("organizacion")
     private List<Superheroe> superheroes;
 }
